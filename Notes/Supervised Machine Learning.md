@@ -11,26 +11,26 @@
 $y' = (w_1 + p * \alpha) * x + (w_2 + 1 * \alpha), \alpha$ is learning rate.
 **If the point is below the line, the intercept decreases, else, increases. If the point has a negative x-value, the slope increases, else decreases.**
 
-![](/img/1.png)
+![](/img/SL/1.png)
 
-![](/img/2.png)
+![](/img/SL/2.png)
 
 ### Square Trick
 * Given a point p and a line $y = w_1 * x + w_2$, p' is a point on the line which $p_x = {p'}_x.$
 * How to change the equation:
 $y' = (w_1 + p(q - q') * \alpha) * x + (w_2 + (q - q') * \alpha), \alpha$ is learning rate. **No rules**.
 
-![](/img/3.png)
+![](/img/SL/3.png)
 
 ### Mean Absolute Error
 * Definition
 $$\hat{w}_{MAE} = \frac{1}{m} \sum_{i=1}^{m} |y - \hat{y}|$$
-![](/img/4.png)
+![](/img/SL/4.png)
 
 ### Mean Squared Error
 * Definition
 $$\hat{w}_{MSE} = \frac{1}{2m} \sum_{i=1}^{m} (y - \hat{y})^2$$
-![](/img/5.png)
+![](/img/SL/5.png)
 
 ### Minimizing Error Functions
 For mean squred error,
@@ -94,7 +94,7 @@ $$df['height\_normal'] = \frac{df['height'] - min(df['height'])}{max(df['height'
 
 ## Perceptron
 ### 2D:
-![](\img\6.png)
+![](/img/SL/6.png)
 Boundary Line:
 
 $w_1x_1 + w_2x_2 + b = 0$
@@ -131,25 +131,25 @@ $$\hat{y} = \left\{\begin{array}{cc}
 \end{array}\right.$$
 
 ### Perceptron
-![](\img\7.png)
-![](\img\8.png)
+![](\img\SL\7.png)
+![](\img\SL\8.png)
 
 * AND Perceptron
-![](\img\9.png)
+![](\img\SL\9.png)
 
 * OR Perceptron
-![](\img\10.png)
+![](\img\SL\10.png)
 
 * Perceptron Algorithm
-![](\img\11.png)
+![](\img\SL\11.png)
 
 ## Decision Tree
 ### Entropy
-![](\img\12.png)
+![](\img\SL\12.png)
 
 #### Two-class Entropy
 General Formula for entropy when the balls can be of two colors.
-![](\img\13.png)
+![](\img\SL\13.png)
 $$Entropy = -\frac{m}{m + n} log_2(\frac{m}{m + n}) - \frac{n}{m + n} log_2(\frac{n}{m + n})$$
 
 #### Multi-class Entropy
@@ -161,14 +161,14 @@ $$Information\ Gain = Entropy(Parent) - [p1 * Entropy(Child_1) + p2 * Entropy(Ch
 #### Hyperparameters for Decision Trees
 ##### 1. **Maximum Depth**
 The maximum depth of a decision tree is simply the largest possible length between the root to a leaf. A tree of maximum length $k$ can have at most $2^k$ leaves.
-![](\img\14.png)
+![](\img\SL\14.png)
 ##### 2. **Minimum number of samples to split**
 A node must have at least `min_samples_split` samples in order to be large enough to split. If a node has fewer samples than `min_samples_split` samples, it will not be split, and the splitting process stops.
 
-![](\img\15.png)
+![](\img\SL\15.png)
 ##### 2. **Minimum number of samples per leaf**
 When splitting a node, one could run into the problem of having 99 samples in one of them, and 1 on the other. This will not take us too far in our process, and would be a waste of resources and time. If we want to avoid this, we can set a minimum for the number of samples we allow on each leaf.
-![](\img\16.png)
+![](\img\SL\16.png)
 
 ## Naive Bayes
 ### Bayes Theorem
@@ -176,7 +176,7 @@ When splitting a node, one could run into the problem of having 99 samples in on
 | :------------- | :------------- |
 | P(A) <br/> P(R\|A)| P(A\|R)|
 
-![](\img\17.png)
+![](\img\SL\17.png)
 
 ### Naive Bayes Algorithm
 $P(A \bigcap B) = P(A) * P(B)$
@@ -201,22 +201,22 @@ It is a ratio of true positives(words classified as spam, and which are actually
 
 ## Support Vector Machines (SVM)
 ### Minimizing Distances
-![](\img\18.png)
+![](\img\SL\18.png)
 
 ### Error Function Intuition
-![](\img\19.png)
-![](\img\20.png)
+![](\img\SL\19.png)
+![](\img\SL\20.png)
 
 ### Perceptron Algorithm
-![](\img\21.png)
+![](\img\SL\21.png)
 
-![](\img\22.png)
+![](\img\SL\22.png)
 
 ### Classification Error
-![](\img\23.png)
+![](\img\SL\23.png)
 
 ### Margin Error
-![](\img\24.png)
+![](\img\SL\24.png)
 
 ### Margin Error Calculation
 $W = (w_1, w_2), x = (x_1, x_2), Wx = w_1x_1 + w_2x_2$
@@ -230,7 +230,7 @@ To calculate the distance between the first and the third, we only need to find 
 
 We move these lines so that $Wx + b = 0$ is translated to $Wx = 0$
 
-![](img/25.png)
+![](/img/SL/25.png)
 
 Find the intersect: assume the intersect is $(p,q)$
 $$\hat{y} = \left\{\begin{array}{cc}
@@ -243,66 +243,66 @@ $\Rightarrow k = \frac{1}{{w_1}^2 + {w_2}^2} = \frac{1}{|W|^2}$
 
 Therefore, the blue point represents the vector $\frac{(w_1, w_2)}{|W|^2}$
 
-![](img/26.png)
+![](/img/SL/26.png)
 
 Therefore the total distance is $\frac{2}{|W|}$
 
 ### C parameter
 Error = C * Classification Error + Margin Error
-![](img/27.png)
+![](/img/SL/27.png)
 
 ### Polynomial Kernel
 #### Kernel Trick
 How to use SVM to separate these points?
-![](img/28.png)
+![](/img/SL/28.png)
 
 Adding a y axis
-![](img/29.png)
+![](/img/SL/29.png)
 
-![](img/30.png)
+![](/img/SL/30.png)
 
-![](img/31.png)
+![](/img/SL/31.png)
 
-![](img/32.png)
+![](/img/SL/32.png)
 
 ### RBF Kernel
-![](img/33.png)
+![](/img/SL/33.png)
 
 Find a line to separate red and blue points
 
-![](img/34.png)
+![](/img/SL/34.png)
 
 add radial basis functions for each point
-![](img/35.png)
+![](/img/SL/35.png)
 
-![](img/36.png)
+![](/img/SL/36.png)
 
-![](img/37.png)
+![](/img/SL/37.png)
 
 How tall is the mountain at that point?
 
-![](img/38.png)
+![](/img/SL/38.png)
 
-![](img/39.png)
+![](/img/SL/39.png)
 
-![](img/40.png)
+![](/img/SL/40.png)
 
-![](img/41.png)
+![](/img/SL/41.png)
 
 Hyperparameter $\gamma$
 2D:
-![](img/42.png)
+![](/img/SL/42.png)
 3D:
-![](img/43.png)
+![](/img/SL/43.png)
 
-![](img/44.png)
+![](/img/SL/44.png)
 
 What is $\gamma$?
 
 Normal Distribution: $y = \frac{1}{\sigma \sqrt{2 \pi}} e^{-\frac{(x - \mu) ^ 2}{2 \sigma^2}}$
 $\gamma = \frac{1}{2 \sigma ^ 2}$
 
-![](img/45.png)
+![](/img/SL/45.png)
 
 ## Ensemble Methods
 ### Ensemble
@@ -325,74 +325,74 @@ Two ways:
 ### Random Forests
 Train Data:
 
-![](img/46.png)
+![](/img/SL/46.png)
 
 Pick subsets from Train Data:
 
 $1^{st} subset:$
-![](img/47.png)
+![](/img/SL/47.png)
 
 $2^{nd} subset:$
-![](img/48.png)
+![](/img/SL/48.png)
 
 $3^{rd} subset:$
-![](img/49.png)
+![](/img/SL/49.png)
 
 Combine results:
-![](img/50.png)
-![](img/51.png)
+![](/img/SL/50.png)
+![](/img/SL/51.png)
 
 ### AdaBoost
-![](img/52.png)
+![](/img/SL/52.png)
 
 Find a line to maximize accuracy, and punish the misclassified points more
 
-![](img/53.png)
+![](/img/SL/53.png)
 
 The next step is trying to clssify these points right, so that the accuracy will be the maximum.
 
-![](img/54.png)
+![](/img/SL/54.png)
 
-![](img/55.png)
+![](/img/SL/55.png)
 
 Voting:
 
-![](img/56.png)
+![](/img/SL/56.png)
 
-![](img/57.png)
+![](/img/SL/57.png)
 
-![](img/58.png)
+![](/img/SL/58.png)
 
 ### Weighing the data(AdaBoost)
-![](img/59.png)
+![](/img/SL/59.png)
 
 First model
 
-![](img/60.png)
+![](/img/SL/60.png)
 
-![](img/61.png)
+![](/img/SL/61.png)
 
-![](img/62.png)
+![](/img/SL/62.png)
 
 ### Weighing the models(AdaBoost)
-![](img/63.png)
+![](/img/SL/63.png)
 
-![](img/64.png)
+![](/img/SL/64.png)
 
 $weight = ln (\frac{accuracy}{1 - accuracy})$
 
 ### Combining the models
-![](img/65.png)
+![](/img/SL/65.png)
 
-![](img/66.png)
+![](/img/SL/66.png)
 
-![](img/67.png)
+![](/img/SL/67.png)
 
-![](img/68.png)
+![](/img/SL/68.png)
 
-![](img/69.png)
+![](/img/SL/69.png)
 
-![](img/70.png)
+![](/img/SL/70.png)
 
 ## Model Evaluation Metrics
 ### Confusion Matrix
@@ -424,23 +424,23 @@ if $\beta = 0,$ we get Precision
 if $\beta = \infty,$ we get Recall
 
 ### Roc Curve
-![](img/71.png)
+![](/img/SL/71.png)
 
 $True Positive Rate = \frac{True\ Positives}{All\ Positives}$
 
 $False Positive Rate = \frac{False\ Positives}{All\ Negatives}$
 
-![](img/72.png)
+![](/img/SL/72.png)
 
-![](img/73.png)
+![](/img/SL/73.png)
 
-![](img/74.png)
+![](/img/SL/74.png)
 
 ### Regression Metrics
 
 R2 Score = $1 - \frac{error_{linear\ regression}}{error_{simple}}$
 
-![](img/75.png)
+![](/img/SL/75.png)
 
 ## Training and Tuning
 ### Type of Errors
@@ -448,32 +448,32 @@ R2 Score = $1 - \frac{error_{linear\ regression}}{error_{simple}}$
 * **Does not do well in the training set**
 * **Error due to bias**
 
-![](img/76.png)
+![](/img/SL/76.png)
 
 #### Overfitting
 * **Does well in the training set**, but it tends to memorize it instead of learning the characteristics of it.
 * **Error due to variance**
 
-![](img/77.png)
+![](/img/SL/77.png)
 
 #### Summary
 
-![](img/78.png)
+![](/img/SL/78.png)
 
 ### Cross Validation
 #### Model Complexity Graph
-![](img/79.png)
+![](/img/SL/79.png)
 **Important: This is not allowed because we use test data to train our model.**
 
 Introduce Cross Validation
-![](img/80.png)
+![](/img/SL/80.png)
 
-![](img/81.png)
+![](/img/SL/81.png)
 
-![](img/82.png)
+![](/img/SL/82.png)
 
 ### K-fold Cross Validation
-![](img/83.png)
+![](/img/SL/83.png)
 
 ### Learning Curves
 ![](img/84.png)
